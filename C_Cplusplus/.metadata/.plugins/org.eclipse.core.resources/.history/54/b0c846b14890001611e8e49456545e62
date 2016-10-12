@@ -1,0 +1,18 @@
+/*
+ * Bacteria.cpp
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#include "Bacteria.h"
+
+Bacteria::Bacteria() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Bacteria::~Bacteria() {
+	// TODO Auto-generated destructor stub
+}
+

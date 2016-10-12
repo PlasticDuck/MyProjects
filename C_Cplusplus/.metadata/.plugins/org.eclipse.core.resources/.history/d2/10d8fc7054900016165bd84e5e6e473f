@@ -1,0 +1,83 @@
+/*
+ * Bacteria.cpp
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#include "Bacteria.h"
+#include <time.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+
+Bacteria::Bacteria(std::vector<double> x,double step) {
+	this->x=x;
+	this->step=step;
+	this->value=NAN;
+
+}
+
+double Bacteria::getStep() const {
+	return step;
+}
+
+void Bacteria::setStep(double step) {
+	this->step = step;
+}
+
+double Bacteria::getValue() const {
+	return value;
+}
+
+void Bacteria::setValue(double value) {
+	this->value = value;
+}
+
+std::vector<double> Bacteria::getX(){
+	return x;
+}
+
+void Bacteria::setX(std::vector<double> x) {
+	this->x = x;
+}
+
+std::vector<double> Bacteria::tumbling(){
+	srand(time(NULL));
+	std::vector<double> direction;
+	double sum=0;
+	for(unsigned int i=0;i<this->x.size();i++){
+		double temp=((double)rand()/(RAND_MAX));
+		sum+=temp*temp;
+		direction.push_back(temp);
+	}
+	sum=sqrt(sum);
+	for(unsigned int i=0;i<direction.size();i++){
+		direction[i]/=sum;
+	}
+	return direction;
+}
+
+std::vector<double> Bacteria::chemotaxis(std::vector<double> direction,int nrStep){
+	std::vector<double> newX;
+	if(direction.size()==this->x.size()){
+		return newX;
+	}
+	for(unsigned int i=0;i<this->x.size();i++){
+		double temp=this->x[i]+this->step*direction[i]*nrStep;
+
+	}
+}
+
+void Bacteria::printBacteria(){
+	printf("[");
+	for(unsigned int i=0;i<this->x.size();i++){
+		printf("%f ",this->x[i]);
+	}
+	printf("] %f %f\n",this->value,this->step);
+}
+
+Bacteria::~Bacteria() {
+	// TODO Auto-generated destructor stub
+}
+

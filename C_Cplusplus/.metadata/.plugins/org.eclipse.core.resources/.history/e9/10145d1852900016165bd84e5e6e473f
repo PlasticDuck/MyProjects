@@ -1,0 +1,31 @@
+/*
+ * Bacteria.h
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#ifndef BACTERIA_H_
+#define BACTERIA_H_
+#include <vector>
+
+class Bacteria {
+private:
+	std::vector<double> x;
+	double value;
+	double step;
+public:
+
+	Bacteria(std::vector<double> x,double step);
+	virtual ~Bacteria();
+	double getStep() const;
+	void setStep(double step);
+	double getValue() const;
+	void setValue(double value);
+	const std::vector<double>& getX() const;
+	void setX(const std::vector<double>& x);
+	const std::vector<double>& tumbling();
+	void printBacteria();
+};
+
+#endif /* BACTERIA_H_ */

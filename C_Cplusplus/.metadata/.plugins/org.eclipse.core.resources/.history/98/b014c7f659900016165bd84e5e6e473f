@@ -1,0 +1,30 @@
+/*
+ * Population.cpp
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#include "Population.h"
+
+#include <stdio.h>
+
+Population::Population(unsigned int nrBac,unsigned int dimension,std::vector<double[2]>) {
+	this->nrBac=nrBac;
+	this->intervals=intervals;
+}
+
+Population::~Population() {
+	// TODO Auto-generated destructor stub
+}
+
+void Population::printIntervals(){
+	for(unsigned int i=0;i<this->dimension;i++){
+		printf("[");
+		for(unsigned int j=0;j<2;j++){
+			printf("%f ",intervals[i*this->dimension+j]);
+		}
+		printf("] ");
+	}
+
+}

@@ -1,0 +1,21 @@
+/*
+ * Population.cpp
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#include "Population.h"
+
+Population::Population(unsigned int nrBac,unsigned int dimension,double intervals[][2]) {
+	this->nrBac=nrBac;
+	this->intervals=intervals;
+}
+
+Population::~Population() {
+	// TODO Auto-generated destructor stub
+}
+
+void Population::printIntervals(){
+
+}

@@ -1,0 +1,17 @@
+/*
+ * Bacteria.h
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#ifndef BACTERIA_H_
+#define BACTERIA_H_
+
+class Bacteria {
+public:
+	Bacteria();
+	virtual ~Bacteria();
+};
+
+#endif /* BACTERIA_H_ */
