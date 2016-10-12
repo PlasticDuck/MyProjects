@@ -1,0 +1,812 @@
+12:18:51 **** Clean-only build of configuration Debug for project BacterialForegainAlgorithm ****
+make clean 
+rm -rf  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o  ./src/Bacteria.d ./src/BacterialForegainAlgorithm.d ./src/Population.d  BacterialForegainAlgorithm
+ 
+12:18:53 **** Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Bacteria.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Bacteria.d" -MT"src/Bacteria.o" -o "src/Bacteria.o" "../src/Bacteria.cpp"
+Finished building: ../src/Bacteria.cpp
+ 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+In file included from /usr/include/c++/5/vector:60:0,
+                 from ../src/Population.h:11,
+                 from ../src/Population.cpp:8:
+/usr/include/c++/5/bits/stl_algobase.h: In instantiation of ‘static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = double [2]; bool _IsMove = false]’:
+/usr/include/c++/5/bits/stl_algobase.h:402:44:   required from ‘_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = false; _II = const double (*)[2]; _OI = double (*)[2]]’
+/usr/include/c++/5/bits/stl_algobase.h:438:45:   required from ‘_OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _OI = __gnu_cxx::__normal_iterator<double (*)[2], std::vector<double [2]> >]’
+/usr/include/c++/5/bits/stl_algobase.h:471:8:   required from ‘_OI std::copy(_II, _II, _OI) [with _II = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _OI = __gnu_cxx::__normal_iterator<double (*)[2], std::vector<double [2]> >]’
+/usr/include/c++/5/bits/vector.tcc:206:31:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+/usr/include/c++/5/bits/stl_algobase.h:380:4: error: static assertion failed: type is not assignable
+    static_assert( __assignable::type::value, "type is not assignable" );
+    ^
+In file included from /usr/include/c++/5/vector:62:0,
+                 from ../src/Population.h:11,
+                 from ../src/Population.cpp:8:
+/usr/include/c++/5/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = double [2]; _Args = {double (&)[2]}]’:
+/usr/include/c++/5/bits/stl_uninitialized.h:75:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]; bool _TrivialValueTypes = false]’
+/usr/include/c++/5/bits/stl_uninitialized.h:126:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]]’
+/usr/include/c++/5/bits/stl_uninitialized.h:281:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]; _Tp = double [2]]’
+/usr/include/c++/5/bits/vector.tcc:213:35:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+/usr/include/c++/5/bits/stl_construct.h:75:7: error: parenthesized initializer in array new [-fpermissive]
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^
+/usr/include/c++/5/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = double [2]; _Args = {const double (&)[2]}]’:
+/usr/include/c++/5/bits/stl_uninitialized.h:75:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]; bool _TrivialValueTypes = false]’
+src/subdir.mk:24: recipe for target 'src/Population.o' failed
+/usr/include/c++/5/bits/stl_uninitialized.h:126:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]]’
+/usr/include/c++/5/bits/stl_uninitialized.h:281:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]; _Tp = double [2]]’
+/usr/include/c++/5/bits/stl_vector.h:1227:35:   required from ‘std::vector<_Tp, _Alloc>::pointer std::vector<_Tp, _Alloc>::_M_allocate_and_copy(std::vector<_Tp, _Alloc>::size_type, _ForwardIterator, _ForwardIterator) [with _ForwardIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _Tp = double [2]; _Alloc = std::allocator<double [2]>; std::vector<_Tp, _Alloc>::pointer = double (*)[2]; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+/usr/include/c++/5/bits/vector.tcc:194:44:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+/usr/include/c++/5/bits/stl_construct.h:75:7: error: parenthesized initializer in array new [-fpermissive]
+make: *** [src/Population.o] Error 1
+12:19:20 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+In file included from /usr/include/c++/5/vector:60:0,
+                 from ../src/Population.h:11,
+                 from ../src/Population.cpp:8:
+/usr/include/c++/5/bits/stl_algobase.h: In instantiation of ‘static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = double [2]; bool _IsMove = false]’:
+/usr/include/c++/5/bits/stl_algobase.h:402:44:   required from ‘_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = false; _II = const double (*)[2]; _OI = double (*)[2]]’
+/usr/include/c++/5/bits/stl_algobase.h:438:45:   required from ‘_OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _OI = __gnu_cxx::__normal_iterator<double (*)[2], std::vector<double [2]> >]’
+/usr/include/c++/5/bits/stl_algobase.h:471:8:   required from ‘_OI std::copy(_II, _II, _OI) [with _II = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _OI = __gnu_cxx::__normal_iterator<double (*)[2], std::vector<double [2]> >]’
+/usr/include/c++/5/bits/vector.tcc:206:31:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+/usr/include/c++/5/bits/stl_algobase.h:380:4: error: static assertion failed: type is not assignable
+    static_assert( __assignable::type::value, "type is not assignable" );
+    ^
+In file included from /usr/include/c++/5/vector:62:0,
+                 from ../src/Population.h:11,
+                 from ../src/Population.cpp:8:
+/usr/include/c++/5/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = double [2]; _Args = {double (&)[2]}]’:
+/usr/include/c++/5/bits/stl_uninitialized.h:75:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]; bool _TrivialValueTypes = false]’
+/usr/include/c++/5/bits/stl_uninitialized.h:126:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]]’
+/usr/include/c++/5/bits/stl_uninitialized.h:281:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = double (*)[2]; _ForwardIterator = double (*)[2]; _Tp = double [2]]’
+/usr/include/c++/5/bits/vector.tcc:213:35:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+/usr/include/c++/5/bits/stl_construct.h:75:7: error: parenthesized initializer in array new [-fpermissive]
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^
+/usr/include/c++/5/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = double [2]; _Args = {const double (&)[2]}]’:
+/usr/include/c++/5/bits/stl_uninitialized.h:75:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]; bool _TrivialValueTypes = false]’
+/usr/include/c++/5/bits/stl_uninitialized.h:126:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]]’
+/usr/include/c++/5/bits/stl_uninitialized.h:281:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _ForwardIterator = double (*)[2]; _Tp = double [2]]’
+/usr/include/c++/5/bits/stl_vector.h:1227:35:   required from ‘std::vector<_Tp, _Alloc>::pointer std::vector<_Tp, _Alloc>::_M_allocate_and_copy(std::vector<_Tp, _Alloc>::size_type, _ForwardIterator, _ForwardIterator) [with _ForwardIterator = __gnu_cxx::__normal_iterator<const double (*)[2], std::vector<double [2]> >; _Tp = double [2]; _Alloc = std::allocator<double [2]>; std::vector<_Tp, _Alloc>::pointer = double (*)[2]; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+/usr/include/c++/5/bits/vector.tcc:194:44:   required from ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double [2]; _Alloc = std::allocator<double [2]>]’
+../src/Population.cpp:14:17:   required from here
+src/subdir.mk:24: recipe for target 'src/Population.o' failed
+/usr/include/c++/5/bits/stl_construct.h:75:7: error: parenthesized initializer in array new [-fpermissive]
+make: *** [src/Population.o] Error 1
+12:22:02 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Bacteria.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Bacteria.d" -MT"src/Bacteria.o" -o "src/Bacteria.o" "../src/Bacteria.cpp"
+Finished building: ../src/Bacteria.cpp
+ 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+In file included from /usr/include/c++/5/array:35:0,
+                 from ../src/BacterialForegainAlgorithm.cpp:11:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:22:16 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+In file included from /usr/include/c++/5/array:35:0,
+                 from ../src/Population.h:12,
+                 from ../src/BacterialForegainAlgorithm.cpp:15:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:22:27 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:23:43 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:29:9: warning: variable ‘intervals’ set but not used [-Wunused-but-set-variable]
+  double intervals[2][2];
+         ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:24:04 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:13: error: cannot convert ‘double (*)[2]’ to ‘double**’ in initialization
+  double **p=intervals;
+             ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=intervals;
+           ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:24:37 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: cannot convert ‘double (*)[2][2]’ to ‘double**’ in initialization
+  double **p=&intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=&intervals;
+           ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:24:39 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: cannot convert ‘double (*)[2][2]’ to ‘double**’ in initialization
+  double **p=&intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=&intervals;
+           ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:24:40 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: cannot convert ‘double (*)[2][2]’ to ‘double**’ in initialization
+  double **p=&intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=&intervals;
+           ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:24:54 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: cannot convert ‘double (*)[2][2]’ to ‘double**’ in initialization
+  double **p=&intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=&intervals;
+           ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:25:05 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: declaration of ‘p’ as multidimensional array must have bounds for all dimensions except the first
+  double *p[][]=&intervals;
+              ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:25:19 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:13: error: cannot convert ‘double (*)[2][2]’ to ‘double*’ in initialization
+  double *p=&intervals;
+             ^
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double *p=&intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:25:30 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: cannot convert ‘double (*)[2][2]’ to ‘double**’ in initialization
+  double **p=&intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:11: warning: unused variable ‘p’ [-Wunused-variable]
+  double **p=&intervals;
+           ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:25:53 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: error: expected unqualified-id before ‘[’ token
+  double *[][]p=&intervals;
+          ^
+../src/BacterialForegainAlgorithm.cpp:33:10: error: expected initializer before ‘[’ token
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:25:59 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:9: error: expected unqualified-id before ‘[’ token
+  double*[][2] p=&intervals;
+         ^
+../src/BacterialForegainAlgorithm.cpp:33:9: error: expected initializer before ‘[’ token
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:26:05 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:9: error: expected unqualified-id before ‘[’ token
+  double*[][2] p=&intervals;
+         ^
+../src/BacterialForegainAlgorithm.cpp:33:9: error: expected initializer before ‘[’ token
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:26:22 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:13: error: cannot convert ‘double (*)[2][2]’ to ‘double*’ in initialization
+  double* p=&intervals;
+             ^
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=&intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:26:26 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:13: error: cannot convert ‘double (*)[2][2]’ to ‘double*’ in initialization
+  double* p=&intervals;
+             ^
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=&intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:27:43 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:18: error: array must be initialized with a brace-enclosed initializer
+  double* p[2][2]=intervals;
+                  ^
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p[2][2]=intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:27:52 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:18: error: array must be initialized with a brace-enclosed initializer
+  double* p[2][2]=intervals;
+                  ^
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p[2][2]=intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:28:09 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:14: error: expected primary-expression before ‘double’
+  double* p=(*double)intervals;
+              ^
+../src/BacterialForegainAlgorithm.cpp:33:14: error: expected ‘)’ before ‘double’
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(*double)intervals;
+          ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:28:24 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:29:29 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:36:23: error: invalid types ‘double[int]’ for array subscript
+    printf("%f ",p[i][j]);
+                       ^
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:29:46 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:30:24 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+12:35:18 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:34:24: error: expected primary-expression before ‘double’
+  Population pop(10,2,(*double)intervals);
+                        ^
+../src/BacterialForegainAlgorithm.cpp:34:24: error: expected ‘)’ before ‘double’
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+12:35:29 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:35:45 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+12:35:49 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+12:46:23 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+In file included from ../src/BacterialForegainAlgorithm.cpp:15:0:
+../src/Population.h:11:16: fatal error: time: No such file or directory
+compilation terminated.
+make: *** [src/BacterialForegainAlgorithm.o] Error 1
+src/subdir.mk:24: recipe for target 'src/BacterialForegainAlgorithm.o' failed
+12:47:02 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Bacteria.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Bacteria.d" -MT"src/Bacteria.o" -o "src/Bacteria.o" "../src/Bacteria.cpp"
+Finished building: ../src/Bacteria.cpp
+ 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+../src/Population.cpp: In member function ‘Bacteria Population::getRandomBacteria()’:
+../src/Population.cpp:25:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:05:12 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Bacteria.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Bacteria.d" -MT"src/Bacteria.o" -o "src/Bacteria.o" "../src/Bacteria.cpp"
+Finished building: ../src/Bacteria.cpp
+ 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+../src/Population.cpp: In member function ‘Bacteria Population::getRandomBacteria()’:
+../src/Population.cpp:31:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:05:16 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:05:41 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+../src/Population.cpp: In member function ‘Bacteria Population::getRandomBacteria()’:
+../src/Population.cpp:31:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:05:43 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:05:48 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:05:51 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:06:14 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+../src/Population.cpp: In member function ‘Bacteria Population::getRandomBacteria()’:
+../src/Population.cpp:31:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:06:17 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:07:11 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:07:14 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:07:50 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:07:52 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:08:11 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:08:13 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:09:24 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:09:26 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:10:05 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:10:08 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:27:07 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:27:10 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:28:06 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:33:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:28:09 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:28:36 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:29:57 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:29:59 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:30:56 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:30:58 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:04 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:32:06 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:44 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:32:48 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.
+13:33:50 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:35:10 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/BacterialForegainAlgorithm.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BacterialForegainAlgorithm.d" -MT"src/BacterialForegainAlgorithm.o" -o "src/BacterialForegainAlgorithm.o" "../src/BacterialForegainAlgorithm.cpp"
+../src/BacterialForegainAlgorithm.cpp: In function ‘int main()’:
+../src/BacterialForegainAlgorithm.cpp:35:10: warning: unused variable ‘p’ [-Wunused-variable]
+  double* p=(double*)intervals;
+          ^
+Finished building: ../src/BacterialForegainAlgorithm.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:35:13 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:35:53 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+Building file: ../src/Population.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Population.d" -MT"src/Population.o" -o "src/Population.o" "../src/Population.cpp"
+Finished building: ../src/Population.cpp
+ 
+Building target: BacterialForegainAlgorithm
+Invoking: GCC C++ Linker
+g++  -o "BacterialForegainAlgorithm"  ./src/Bacteria.o ./src/BacterialForegainAlgorithm.o ./src/Population.o   
+Finished building target: BacterialForegainAlgorithm
+ 
+13:35:57 **** Incremental Build of configuration Debug for project BacterialForegainAlgorithm ****
+make all 
+make: Nothing to be done for 'all'.

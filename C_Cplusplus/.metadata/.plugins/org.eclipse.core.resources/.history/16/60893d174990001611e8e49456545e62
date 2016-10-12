@@ -1,0 +1,17 @@
+/*
+ * Population.h
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATION_H_
+#define POPULATION_H_
+
+class Population {
+public:
+	Population();
+	virtual ~Population();
+};
+
+#endif /* POPULATION_H_ */
