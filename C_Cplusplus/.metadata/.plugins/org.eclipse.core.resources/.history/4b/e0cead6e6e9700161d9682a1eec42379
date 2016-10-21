@@ -1,0 +1,8 @@
+import  matplotlib.pyplot
+import thread
+
+ 
+
+thread.start_new_thread(matplotlib.pyplot.show,"s")
+matplotlib.pyplot.show();
+matplotlib.pyplot.Figure()

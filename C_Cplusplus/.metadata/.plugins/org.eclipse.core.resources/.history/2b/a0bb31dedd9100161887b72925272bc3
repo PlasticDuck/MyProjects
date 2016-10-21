@@ -1,0 +1,41 @@
+/*
+ * Population.h
+ *
+ *  Created on: Oct 12, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATION_H_
+#define POPULATION_H_
+
+#include <time.h>
+
+#include "Bacteria.h"
+
+class Population {
+private:
+	std::vector<Bacteria> bacteries;
+	double *intervals;
+	double initStep;
+	unsigned int nrBac;
+	unsigned int dimension;
+	unsigned double eliminationFactor;
+
+public:
+
+	Population(unsigned int nrBac,unsigned int dimension,double *intervals,double initStep,unsigned double eliminationFactor);
+	void InitailizeRandom();
+	void printIntervals();
+	void printBacteries();
+	Bacteria getRandomBacteria();
+	void sortPopulation();
+	unsigned int getPopulationSize();
+	virtual ~Population();
+	Bacteria* getBacteria(unsigned int index);
+	void setBacteria(unsigned int index,Bacteria bacteria);
+	void reproduction();
+	void eliminationAndDispersion();
+
+};
+
+#endif /* POPULATION_H_ */

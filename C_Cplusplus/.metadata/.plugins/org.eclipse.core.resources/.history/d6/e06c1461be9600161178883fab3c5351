@@ -1,0 +1,47 @@
+/*
+ * MeshGridSaver.cpp
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#include "MeshGridSaver.h"
+
+MeshGridSaver::MeshGridSaver(double (*function)(std::vector<double>),double *intervals,unsigned int nrPoint,std::string destination,std::string fileName) {
+	this->function=function;
+	this->intervals=intervals;
+	this->destination=destination;
+	this->fileName=fileName;
+	this->nrPoint=nrPoint;
+}
+
+MeshGridSaver::~MeshGridSaver() {
+	// TODO Auto-generated destructor stub
+}
+
+
+MeshGrid MeshGridSaver::generateMeshGrid(){
+	MeshGrid s;
+
+	double deltaX=(intervals[1]-intervals[0])/(float)nrPoint;
+		double deltaY=(intervals[3]-intervals[2])/(float)nrPoint;
+		//Json::Value xJson,yJson,zJson,data;
+		for(unsigned int i=0;i<nrPoints;i++){
+			Json::Value xRow,yRow,zRow;
+			for(unsigned int j=0;j<nrPoints;j++){
+				xRow.append(intervals[0]+deltaX*j);
+				yRow.append(intervals[2]+deltaY*i);
+				std::vector<double> vec;
+				vec.push_back(intervals[0]+deltaX*j);vec.push_back(intervals[2]+deltaY*i);
+				double temp=(*function)(vec);
+				zRow.append(temp);
+			}
+			xJson.append(xRow);
+			yJson.append(yRow);
+			zJson.append(zRow);
+		}
+		data["xMatrix"]=xJson;
+		data["yMatrix"]=yJson;
+		data["zMatrix"]=zJson;
+		return MeshGrid;
+}

@@ -1,0 +1,166 @@
+/*
+ * PopulationsDrawer.cpp
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#include "PopulationsDrawer.h"
+
+PopulationsDrawer::PopulationsDrawer(int *argc,const char** argv,std::vector<double**> populations,double (*function)(std::vector<double>),unsigned int nrBacteries,unsigned int nrDimension,double *intervals){
+	this->populations=populations;
+	this->pls=new plstream();
+	this->nrBacteries=nrBacteries;
+	this->nrDimension=nrDimension;
+	this->intervals=intervals;
+	this->nrPoints=0;
+	this->function=function;
+	this->yMax=10;this->yMin=-10;
+	this->xMax=10;this->xMin=-10;
+	pls->parseopts(argc, argv, PL_PARSE_FULL);
+	this->errorCode=0;
+	this->errmsg=null;
+
+}
+
+PopulationsDrawer::~PopulationsDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+void PopulationsDrawer::initialize(){
+	//pls->parseopts(&argc,argv,PL_PARSE_FULL);
+	pls->scolbg(255,255,255);
+	//1pls->sdev("tk");
+	pls->init();
+	pls->sError(&errorCode, errmsg);
+	pls->scol0(0,0,0,0);
+	float xxMin=(float)this->intervals[0*2+0],
+		xxMax=(float)this->intervals[0*2+1],
+		yyMin=(float)this->intervals[1*2+0],
+		yyMax=(float)this->intervals[1*2+1];
+	unsigned long points=0;
+	for(int i=0;i<populations.size();i++){
+		double **population=populations[i];
+		for(int j=0;j<this->nrBacteries;j++){
+			double *bacX=population[j];
+			if(bacX[0]>xxMax){
+				xxMax=(float)bacX[0];
+			}
+			if(bacX[0]<xxMin){
+				xxMin=bacX[0];
+			}
+			if(bacX[1]>yyMax){
+				yyMax=bacX[1];
+			}
+			if(bacX[1]<yyMin){
+				yyMin=bacX[1];
+			}
+			points++;
+		}
+	}
+	this->nrPoints=points;
+	this->xMin=-abs(xxMin/10)+xxMin;this->xMax=abs(xxMax/10)+xxMax;
+	this->yMin=-abs(yyMin/10)+yyMin;this->yMax=abs(yyMax/10)+yyMax;
+	std::cout<<"["<<xMin<<" "<<xMax<<"]["<<yMin<<","<<yMax<<"]"<<std::endl;
+	pls->col0(0);
+	pls->env((PLFLT)this->xMin,(PLFLT)this->xMax,(PLFLT)this->yMin,(PLFLT)this->yMax,(PLINT)PopulationsDrawer::just,(PLINT)PopulationsDrawer::axis);
+	drawContour();
+	drawPoint();
+}
+
+void PopulationsDrawer::endDraw(){
+	if(errorCode!=0){
+		std::cout<<errmsg;
+	}
+	plend();
+	//pls->env((PLFLT)this->xMin,(PLFLT)this->xMax,(PLFLT)this->yMin,(PLFLT)this->yMax,(PLINT)PopulationsDrawer::just,(PLINT)PopulationsDrawer::axis);
+	delete pls;
+}
+
+void PopulationsDrawer::drawPoint(){
+	pls->col0(0);
+	PLFLT *x,*y;
+	if(this->nrPoints==0) return;
+	x=new PLFLT[nrPoints];
+	y=new PLFLT[nrPoints];
+	std::cout<<"Drawing points"<<" "<<nrPoints<<std::endl;
+	unsigned long indexPoint=0;
+	for(unsigned int i=0;i<populations.size();i++){
+		double **pop=populations[i];
+		for(unsigned int j=0;j<this->nrBacteries;j++){
+			double *bac=pop[j];
+			x[indexPoint]=(PLFLT)bac[0];
+			y[indexPoint]=(PLFLT)bac[1];
+			indexPoint++;
+		}
+	}
+	pls->poin((PLINT)this->nrPoints, x, y,20);
+
+
+	pls->col0(3);
+	for(unsigned int i=0;i<this->nrBacteries;i++){
+		x=new PLFLT[populations.size()];
+		y=new PLFLT[populations.size()];
+		for(unsigned int j=0;j<populations.size();j++){
+			double **pop=populations[j];double *bac=pop[i];
+			x[j]=(PLFLT)bac[0];
+			y[j]=(PLFLT)bac[1];
+		}
+		//pls->line((PLINT)populations.size(), x, y);
+	}
+
+
+	std::cout<<"End drawing points";
+	delete x;delete y;
+}
+
+void PopulationsDrawer::drawContour(){
+	std::cout<<"Drawing contour!"<<std::endl;
+	std::cout<<PopulationsDrawer::row<<" "<<PopulationsDrawer::col<<std::endl;
+	PLcGrid2 cgrid2;
+	PLFLT **z;
+	PLFLT *lev=new PLFLT[10];
+
+	pls->Alloc2dGrid(&cgrid2.xg,PopulationsDrawer::row,PopulationsDrawer::col);
+	pls->Alloc2dGrid(&cgrid2.yg,PopulationsDrawer::row,PopulationsDrawer::col);
+	pls->Alloc2dGrid( &z, PopulationsDrawer::row,PopulationsDrawer::col);
+	cgrid2.nx=PopulationsDrawer::row;
+	cgrid2.ny=PopulationsDrawer::col;
+
+	std::set<float> levels;
+
+	for(unsigned int i=0;i<PopulationsDrawer::row;i++){
+		float x=(this->xMax-this->xMin)*((float)i/PopulationsDrawer::row)+this->xMin;
+		for(unsigned int j=0;j<PopulationsDrawer::col;j++){
+			float y=(this->yMax-this->yMin)*((float)j/PopulationsDrawer::col)+this->yMin;
+			cgrid2.xg[i][j]=x;
+			cgrid2.yg[i][j]=y;
+			std::vector<double> xVec;
+			xVec.push_back((double)x);xVec.push_back((double)y);
+			z[i][j]=(*this->function)(xVec);
+			float level=z[i][j];
+			levels.insert(level);
+
+		}
+	}
+	std::cout<<"nr Levels "<<levels.size() <<std::endl;
+	std::cout<<"Here2"<<"sss";
+	//float levelsArray[levels.size()];
+	//int i=0;
+	/*for(std::set<float>::iterator it=levels.begin();it!=levels.end();++it,i++){
+		std::cout<<"ss ";
+		levelsArray[i]=(*it);
+	}*/
+
+
+	pls->col0(3);
+	//pls->cont(z, row, col, 1,row,1,col, lev,10, pltr2,&cgrid2);
+
+
+	pls->Free2dGrid( cgrid2.xg,PopulationsDrawer::row,PopulationsDrawer::col );
+	pls->Free2dGrid( cgrid2.yg,PopulationsDrawer::row,PopulationsDrawer::col );
+	pls->Free2dGrid( z,PopulationsDrawer::row,PopulationsDrawer::col );
+	delete lev;
+
+}
+

@@ -1,0 +1,16 @@
+/*
+ * PyRunner.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyRunner.h"
+
+PyRunner::PyRunner(char *8argv) {
+}
+
+PyRunner::~PyRunner() {
+	// TODO Auto-generated destructor stub
+}
+

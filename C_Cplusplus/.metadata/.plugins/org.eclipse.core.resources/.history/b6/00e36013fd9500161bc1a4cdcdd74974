@@ -1,0 +1,19 @@
+/*
+ * DrawerRunner.h
+ *
+ *  Created on: Oct 19, 2016
+ *      Author: nandi
+ */
+
+#ifndef DRAWERRUNNER_H_
+#define DRAWERRUNNER_H_
+#include <string>
+
+class DrawerRunner {
+
+public:
+	DrawerRunner();
+	virtual ~DrawerRunner();
+};
+
+#endif /* DRAWERRUNNER_H_ */

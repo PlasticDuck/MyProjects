@@ -1,0 +1,22 @@
+/*
+ * EvoluationCollecter.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef EVOLUTIONCOLLECTER_H_
+#define EVOLUTIONCOLLECTER_H_
+
+#include <vector>
+
+class EvoluationCollecter {
+private:
+	std::vector<std::vector<double> > *collection;
+public:
+	EvoluationCollecter();
+	virtual ~EvoluationCollecter();
+	void add(std::vector<double> );
+};
+
+#endif /* EVOLUTIONCOLLECTER_H_ */

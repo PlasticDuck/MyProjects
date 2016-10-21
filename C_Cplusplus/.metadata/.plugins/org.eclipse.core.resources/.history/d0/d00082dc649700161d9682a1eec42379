@@ -1,0 +1,3 @@
+import matplotlib.pyplot
+print "Here in file:",meanOfPopulation[0]
+

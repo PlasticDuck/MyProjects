@@ -1,0 +1,109 @@
+//============================================================================
+// Name        : BacterialForegainAlgorithm.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+
+#include <stdio.h>
+#include <time.h>
+#include <string>
+
+//My includes files
+#include "../BacterialOtimizators/Bacteria.h"
+#include "../BacterialOtimizators/Population.h"
+#include "../BacterialOtimizators/BacterialOptimizator.h"
+#include "BacterialOptimizatorModified.h"
+#include "../SaversAndDrawers/PyRunner.h""
+#include "../SaversAndDrawers/PyDrawer.h"
+#include "../SaversAndDrawers/MeshGridGenerator.h"
+#include "../SaversAndDrawers/PyEvolutionDrawer.h"
+
+
+using namespace std;
+
+double Sphere(vector<double> X){
+	double value=0;
+	for(unsigned int i=0;i<X.size();i++){
+		value+=X[i]*X[i];
+	}
+	return value;
+}
+void test2(char** argv);
+void test1();
+
+int main( int argc,char *argv[]) {
+	test2(argv);
+	return 0;
+}
+
+void test2(char **argv){
+	srand(time(NULL));
+	cout << "!!!START!!!" << endl;
+	double intervals[2][2];
+	intervals[0][0]=-10.0;intervals[0][1]=10.0;
+	intervals[1][0]=-10.0;intervals[1][1]=10.0;
+	int nrBac=10;
+
+	Population pop(nrBac,2,(double*)intervals,0.1);
+	pop.InitailizeRandom();
+	BacterialOptimizatorModified bacteriaOptimizator(&pop,&Sphere,10,10,2,2,0.001);
+	std::cout<<"!!!Init Bacteries!!!\n";
+	bacteriaOptimizator.initPopulationWithValue();
+
+	std::cout<<"!!Optimization!!\n";
+	bacteriaOptimizator.optimizate();
+	cout << "!!!END!!!" << endl;
+
+	PyRunner *runnerPy=new PyRunner(argv);
+	runnerPy->star();
+
+	PyEvolutionDrawer *drawer=new PyEvolutionDrawer(bacteriaOptimizator.getMeanPopulation(),argv,runnerPy);
+	drawer->drawEvolution();
+
+
+//	MeshGridGenerator meshGridGenerator(&Sphere,(double*)intervals,100);
+//	PyDrawer pyDrawer(&meshGridGenerator,argv,bacteriaOptimizator.getPopulations(),nrBac,runnerPy);
+//	pyDrawer.draw();
+
+
+	runnerPy->end();
+	char s;
+	scanf("%c",)
+	cout << "!!!END!!!" << endl;
+}
+
+void test1(){
+	srand(time(NULL));
+	cout << "!!!START!!!" << endl;
+	double intervals[2][2];
+	intervals[0][0]=-10.0;intervals[0][1]=10.0;
+	intervals[1][0]=-10.0;intervals[1][1]=10.0;
+	int nrBac=10;
+
+	Population pop(nrBac,2,(double*)intervals,0.1);
+	pop.InitailizeRandom();
+	BacterialOptimizatorModified bacteriaOptimizator(&pop,&Sphere,10,200,2,2,0.001);
+	std::cout<<"!!!Init Bacteries!!!\n";
+	bacteriaOptimizator.initPopulationWithValue();
+
+	std::cout<<"!!Optimization!!\n";
+	bacteriaOptimizator.optimizate();
+	cout << "!!!END!!!\nStart New" << endl;
+	std::string destination="/home/nandi/workspace/MyProjects/C_Cplusplus/BacterialForegainAlgorithm/";
+	std::string fileName="data.out";
+//	PopulationsFileSaver saver(bacteriaOptimizator.getPopulations(),2,nrBac,fileName,destination,(double*)intervals,&Sphere);
+//	saver.saveInTheFile();
+//	DrawerRunner *drawer=new DrawerRunner(destination,fileName,argc,argv);
+//	drawer->drawing();
+	//bacteriaOptimizator.printpopulations();
+
+	bacteriaOptimizator.freeMemory();
+	cout << "!!!END!!!" << endl;
+
+}
+

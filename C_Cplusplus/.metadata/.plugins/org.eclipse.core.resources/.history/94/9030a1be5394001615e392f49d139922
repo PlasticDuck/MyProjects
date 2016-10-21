@@ -1,0 +1,18 @@
+//============================================================================
+// Name        : TestSphere.cpp
+// Author      : Nandi
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DrawSphere.h"
+using namespace std;
+
+int main() {
+	DrawSphere *sphere=new DrawSphere();
+	sphere->drawSphere();
+
+	return 0;
+}

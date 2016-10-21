@@ -1,0 +1,16 @@
+20:29:00 **** Build of configuration Debug for project TestPythonMatPlot ****
+make all 
+Building file: ../src/TestPythonMatPlot.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestPythonMatPlot.d" -MT"src/TestPythonMatPlot.o" -o "src/TestPythonMatPlot.o" "../src/TestPythonMatPlot.cpp"
+In file included from /usr/include/boost/python/detail/prefix.hpp:13:0,
+                 from /usr/include/boost/python/args.hpp:8,
+                 from /usr/include/boost/python.hpp:11,
+                 from ../src/TestPythonMatPlot.cpp:10:
+/usr/include/boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+compilation terminated.
+make: *** [src/TestPythonMatPlot.o] Error 1
+src/subdir.mk:18: recipe for target 'src/TestPythonMatPlot.o' failed
+
+20:29:00 Build Finished (took 132ms)
+

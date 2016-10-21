@@ -1,0 +1,29 @@
+/*
+ * PopulationsFileSaver.h
+ *
+ *  Created on: Oct 19, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATIONSFILESAVER_H_
+#define POPULATIONSFILESAVER_H_
+#include <vector>
+#include <jsoncpp/json/json.h>
+#include <iostream>
+
+
+
+class PopulationsFileSaver {
+private:
+	std::vector<double**> populations;
+	char *fileName;
+	char *destination;
+	unsigned int nrDimension;
+	unsigned int nrBac;
+public:
+	PopulationsFileSaver(std::vector<double**>,unsigned int,unsigned int,char*,char*);
+	virtual ~PopulationsFileSaver();
+	void saveInTheFile();
+};
+
+#endif /* POPULATIONSFILESAVER_H_ */

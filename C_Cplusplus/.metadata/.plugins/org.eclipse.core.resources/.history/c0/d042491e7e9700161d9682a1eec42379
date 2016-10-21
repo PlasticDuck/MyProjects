@@ -1,0 +1,18 @@
+/*
+ * PyCollectionDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyCollectionDrawer.h"
+
+PyCollectionDrawer::PyCollectionDrawer(EvolutionCollector* collector,PyRunner* runner) {
+	// TODO Auto-generated constructor stub
+
+}
+
+PyCollectionDrawer::~PyCollectionDrawer() {
+	// TODO Auto-generated destructor stub
+}
+

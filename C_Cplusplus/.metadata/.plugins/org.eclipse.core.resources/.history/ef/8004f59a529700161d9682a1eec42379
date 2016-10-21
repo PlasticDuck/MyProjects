@@ -1,0 +1,111 @@
+/*
+ * PyDrawer.cpp
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#include "PyDrawer.h"
+
+PyDrawer::PyDrawer(MeshGridGenerator *meshGridGenenrator,char** argv,std::vector<double**> populations,unsigned int nrBac) {
+	this->meshgridGenerator=meshGridGenenrator;
+	this->argv=argv;
+	this->populations=populations;
+	this->nrBac=nrBac;
+}
+
+PyDrawer::~PyDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+void PyDrawer::draw(){
+	std::cout<<"Drawer start"<<std::endl;
+	MeshGrid meshGrid=meshgridGenerator->generateMeshGrid();
+	PyObject** meshGridPy=this->converterMeshGrid(meshGrid);
+
+	Py_SetProgramName(argv[0]);
+	Py_Initialize();
+	FILE *f=fopen("PyCode/drawContour.py","r");
+	PyObject *m,*globalDict;
+	m=PyImport_AddModule("__main__");
+	if(m==NULL) return;
+	PyList_Fini();
+	PyModule_AddObject(m,"X",meshGridPy[0]);
+	PyModule_AddObject(m,"Y",meshGridPy[1]);
+	PyModule_AddObject(m,"Z",meshGridPy[2]);
+	this->drawPoints(m);
+
+	globalDict=PyModule_GetDict(m);
+	PyRun_File(f,"PyCode/test.py",Py_file_input,globalDict,globalDict);
+	PyErr_Print();
+	Py_Finalize();
+	fclose(f);
+	std::cout<<"Drawer end"<<std::endl;
+}
+
+PyObject** PyDrawer::converterMeshGrid(MeshGrid meshGrid){
+	PyObject **meshGridPy=(PyObject**)malloc(3*sizeof(PyObject*));
+	PyObject *X_py,*Y_py,*Z_py;
+	X_py=PyList_New(meshGrid.nrPoints);
+	Y_py=PyList_New(meshGrid.nrPoints);
+	Z_py=PyList_New(meshGrid.nrPoints);
+	for(unsigned int i=0;i<meshGrid.nrPoints;i++){
+		PyObject *rowX,*rowY,*rowZ;
+		rowX=PyList_New(meshGrid.nrPoints);
+		rowY=PyList_New(meshGrid.nrPoints);
+		rowZ=PyList_New(meshGrid.nrPoints);
+		for(unsigned int j=0;j<meshGrid.nrPoints;j++){
+			PyObject *tempX,*tempY,*tempZ;
+			tempX=Py_BuildValue("f",meshGrid.X[i][j]);
+			tempY=Py_BuildValue("d",meshGrid.Y[i][j]);
+			tempZ=Py_BuildValue("d",meshGrid.Z[i][j]);
+			PyList_SetItem(rowX,j,tempX);
+			PyList_SetItem(rowY,j,tempY);
+			PyList_SetItem(rowZ,j,tempZ);
+
+		}
+
+		PyList_SetItem(X_py,i,rowX);
+		PyList_SetItem(Y_py,i,rowY);
+		PyList_SetItem(Z_py,i,rowZ);
+	}
+	meshGridPy[0]=X_py;
+	meshGridPy[1]=Y_py;
+	meshGridPy[2]=Z_py;
+	return meshGridPy;
+}
+
+void PyDrawer::drawPoints(PyObject* mainModule){
+	PyObject* popPyPrev=NULL;
+	for(unsigned int i=0;i<this->populations.size();){
+		PyObject* popPy=convertPopulation(i);
+
+		PyModule_AddObject(mainModule,"population",popPy);
+		if(popPyPrev==NULL){
+			PyModule_AddObject(mainModule,"first",Py_BuildValue("i",0));
+		}
+		else{
+			PyModule_AddObject(mainModule,"first",Py_BuildValue("i",1));
+			PyModule_AddObject(mainModule,"populationPrev",popPyPrev);
+		}
+		FILE *f=fopen("PyCode/drawPoint.py","r");
+		PyObject* global=PyModule_GetDict(mainModule);
+		PyRun_SimpleFile(f,"PyCode/we");
+		i++;
+		popPyPrev=convertPopulation(i-1);
+	}
+
+
+
+}
+
+PyObject* PyDrawer::convertPopulation(unsigned int index){
+	double **population=this->populations[index];
+	PyObject *popPy=PyList_New(this->nrBac);
+	for(unsigned int j=0;j<this->nrBac;j++){
+		double *bac=population[j];
+		PyObject *bacPy=Py_BuildValue("[f,f]",bac[0],bac[1]);
+		PyList_SetItem(popPy,j,bacPy);
+	}
+	return popPy;
+}

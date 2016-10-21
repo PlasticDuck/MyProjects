@@ -1,0 +1,78 @@
+13:38:16 **** Incremental Build of configuration Debug for project Testcontour ****
+make all 
+Building file: ../src/TestContour.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestContour.d" -MT"src/TestContour.o" -o "src/TestContour.o" "../src/TestContour.cpp"
+../src/TestContour.cpp: In constructor ‘TestContour::TestContour(int, const char**)’:
+../src/TestContour.cpp:11:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j;
+      ^
+../src/TestContour.cpp:11:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j;
+        ^
+../src/TestContour.cpp:12:9: warning: unused variable ‘xg1’ [-Wunused-variable]
+  PLFLT *xg1=new PLFLT[XPTS];
+         ^
+../src/TestContour.cpp:13:9: warning: unused variable ‘yg1’ [-Wunused-variable]
+  PLFLT *yg1=new PLFLT[YPTS];
+         ^
+../src/TestContour.cpp:14:10: warning: unused variable ‘cgrid1’ [-Wunused-variable]
+  PLcGrid cgrid1;PLcGrid2 cgrid2;
+          ^
+../src/TestContour.cpp:14:26: warning: unused variable ‘cgrid2’ [-Wunused-variable]
+  PLcGrid cgrid1;PLcGrid2 cgrid2;
+                          ^
+../src/TestContour.cpp:15:10: warning: unused variable ‘z’ [-Wunused-variable]
+  PLFLT **z,**w;
+          ^
+../src/TestContour.cpp:15:14: warning: unused variable ‘w’ [-Wunused-variable]
+  PLFLT **z,**w;
+              ^
+../src/TestContour.cpp:16:8: warning: unused variable ‘xx’ [-Wunused-variable]
+  PLFLT xx,yy,argx,argy,distort;
+        ^
+../src/TestContour.cpp:16:11: warning: unused variable ‘yy’ [-Wunused-variable]
+  PLFLT xx,yy,argx,argy,distort;
+           ^
+../src/TestContour.cpp:16:14: warning: unused variable ‘argx’ [-Wunused-variable]
+  PLFLT xx,yy,argx,argy,distort;
+              ^
+../src/TestContour.cpp:16:19: warning: unused variable ‘argy’ [-Wunused-variable]
+  PLFLT xx,yy,argx,argy,distort;
+                   ^
+../src/TestContour.cpp:16:24: warning: unused variable ‘distort’ [-Wunused-variable]
+  PLFLT xx,yy,argx,argy,distort;
+                        ^
+../src/TestContour.cpp:17:15: warning: unused variable ‘mark’ [-Wunused-variable]
+  static PLINT mark=1500;
+               ^
+../src/TestContour.cpp:18:15: warning: unused variable ‘space’ [-Wunused-variable]
+  static PLINT space=1500;
+               ^
+../src/TestContour.cpp:27:8: warning: unused variable ‘x1’ [-Wunused-variable]
+  PLFLT x1=1.0,y1=1.0,x2=5.0,y2=5.0;
+        ^
+../src/TestContour.cpp:27:15: warning: unused variable ‘y1’ [-Wunused-variable]
+  PLFLT x1=1.0,y1=1.0,x2=5.0,y2=5.0;
+               ^
+../src/TestContour.cpp:27:22: warning: unused variable ‘x2’ [-Wunused-variable]
+  PLFLT x1=1.0,y1=1.0,x2=5.0,y2=5.0;
+                      ^
+../src/TestContour.cpp:27:29: warning: unused variable ‘y2’ [-Wunused-variable]
+  PLFLT x1=1.0,y1=1.0,x2=5.0,y2=5.0;
+                             ^
+In file included from ../src/TestContour.cpp:8:0:
+../src/TestContour.h: At global scope:
+../src/TestContour.h:47:13: warning: ‘void mypltr(PLFLT, PLFLT, PLFLT*, PLFLT*, void*)’ defined but not used [-Wunused-function]
+ static void mypltr( PLFLT x, PLFLT y, PLFLT *tx, PLFLT *ty, void * /* pltr_data */ )
+             ^
+Finished building: ../src/TestContour.cpp
+ 
+Building target: Testcontour
+Invoking: Cross G++ Linker
+g++  -o "Testcontour"  ./src/TestContour.o ./src/Testcontour.o   -lplplotcxxd  -lplplotd
+Finished building target: Testcontour
+ 
+
+13:38:16 Build Finished (took 334ms)
+

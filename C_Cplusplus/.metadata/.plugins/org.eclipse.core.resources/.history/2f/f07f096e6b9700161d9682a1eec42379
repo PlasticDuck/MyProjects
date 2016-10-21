@@ -1,0 +1,26 @@
+/*
+ * PyEvolutionDrawer.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYEVOLUTIONDRAWER_H_
+#define PYEVOLUTIONDRAWER_H_
+
+#include <python2.7/Python.h>
+#include <vector>
+#include <iostream>
+
+class PyEvolutionDrawer {
+private:
+	char** argv;
+	std::vector<double> meanPopulation;
+	PyObject* converter();
+public:
+	PyEvolutionDrawer(std::vector<double>,char**);
+	virtual ~PyEvolutionDrawer();
+	void drawEvolution();
+};
+
+#endif /* PYEVOLUTIONDRAWER_H_ */

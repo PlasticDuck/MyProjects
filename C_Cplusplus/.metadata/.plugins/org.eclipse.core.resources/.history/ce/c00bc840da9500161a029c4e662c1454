@@ -1,0 +1,18 @@
+//============================================================================
+// Name        : TestJson.cpp
+// Author      : Nandi
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <jsoncpp/json/json.h>
+using namespace std;
+
+int main() {
+	Json::Value root;
+	root["ss"]="ss";
+	cout << "Testeles" << endl; // prints Testeles
+	return 0;
+}

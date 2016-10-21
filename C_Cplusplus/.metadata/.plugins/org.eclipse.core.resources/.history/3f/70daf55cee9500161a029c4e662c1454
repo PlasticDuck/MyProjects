@@ -1,0 +1,41 @@
+import json
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def drawPoints(collection):
+	for i in range(len(collection)):
+		population=collection[i]
+		for j in range(len(population)):
+			bac=population[j]
+			plt.plot(bac[0],bac[1],'g^');
+
+
+def drawLines(collection):
+	nrPop=len(collection)
+	nrBac=len(collection[0])
+	for j in range(nrBac):
+		bacX=[];bacY=[];
+		for i in range(len(collection)):
+			population=collection[i]
+			bac=population[j]
+			bacX=np.append(bacX,bac[0])
+			bacY=np.append(bacY,bac[1])
+		plt.plot(bacX,bacY,'r--');	
+
+def drawContour(intervalsPop):
+	nrPoints=1000;
+	print intervalsPop
+
+destination='/home/nandi/workspace/MyProjects/C_Cplusplus/BacterialForegainAlgorithm/'
+fileName='data.out'
+
+f=open(destination+fileName,"r")
+data=json.load(f)
+collectionPop=data['collection']
+intervalsPop=data['intervals']
+plt.hold(True);
+drawPoints(collectionPop)
+drawLines(collectionPop)
+plt.hold(False);
+plt.show();

@@ -1,0 +1,20 @@
+/*
+ * PyCollectionDrawer.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef EVOLUTIONDRAWERS_PYCOLLECTIONDRAWER_H_
+#define EVOLUTIONDRAWERS_PYCOLLECTIONDRAWER_H_
+
+#include "PyEvolutionDrawer"
+#include "../../Collecter/EvoluationCollecter.h"
+
+class PyCollectionDrawer :public PyEvolutionDrawer{
+public:
+	PyCollectionDrawer();
+	virtual ~PyCollectionDrawer();
+};
+
+#endif /* EVOLUTIONDRAWERS_PYCOLLECTIONDRAWER_H_ */

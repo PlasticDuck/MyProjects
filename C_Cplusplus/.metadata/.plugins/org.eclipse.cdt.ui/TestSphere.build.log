@@ -1,0 +1,6 @@
+08:49:05 **** Incremental Build of configuration Debug for project TestSphere ****
+make all 
+make: Nothing to be done for 'all'.
+
+08:49:05 Build Finished (took 127ms)
+

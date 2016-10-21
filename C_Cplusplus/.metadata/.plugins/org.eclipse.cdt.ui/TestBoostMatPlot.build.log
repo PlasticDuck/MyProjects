@@ -1,0 +1,13 @@
+08:47:37 **** Incremental Build of configuration Debug for project TestBoostMatPlot ****
+make all 
+Building file: ../src/TestBoostMatPlot.cpp
+Invoking: Cross G++ Compiler
+g++ -I/usr/include/python2.7 -I/usr/include/boost -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"src/TestBoostMatPlot.d" -MT"src/TestBoostMatPlot.o" -o "src/TestBoostMatPlot.o" "../src/TestBoostMatPlot.cpp"
+../src/TestBoostMatPlot.cpp:17:1: error: expected unqualified-id before numeric constant
+ 5
+ ^
+make: *** [src/TestBoostMatPlot.o] Error 1
+src/subdir.mk:18: recipe for target 'src/TestBoostMatPlot.o' failed
+
+08:47:37 Build Finished (took 439ms)
+

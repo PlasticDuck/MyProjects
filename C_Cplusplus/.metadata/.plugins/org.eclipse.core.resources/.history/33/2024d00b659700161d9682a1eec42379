@@ -1,0 +1,8 @@
+import matplotlib.pyplot
+
+
+def drawEvolution(meanOfPopulation):
+    
+
+print "Here in file:",meanOfPopulation[0]
+

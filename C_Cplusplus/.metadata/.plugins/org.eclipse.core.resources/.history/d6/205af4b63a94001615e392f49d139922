@@ -1,0 +1,39 @@
+//============================================================================
+// Name        : test2.cpp
+// Author      : Nandi
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <plplot/plstream.h>
+#include <plplot/plplot.h>
+
+using namespace std;
+
+int main() {
+	PLFLT xmin =0, ymin=0, xmax=10, ymax=30;
+	PLINT just=0, axis=0;
+	 plstream *pls;
+	 pls = new plstream();
+	 //pls->init();
+	 pls->scolbg(255,255,255);
+	 pls->sdev("xwin");
+	 pls->init();
+	 PLFLT x1=1.0,y1=1.0,x2=5.0,y2=5.0;
+	 pls->col0(0);
+	 pls->env(xmin, xmax, ymin, ymax, just, axis );
+
+	 PLFLT r[1],g[1],b[1];
+	 r[0]=0;g[0]=0;b[0]=0;
+	 pls->scmap1(r,g,b,1);
+
+11	 pls->col0(7);
+	 pls->join(x1,y1,x2,y2);
+
+
+
+	 delete pls;
+	return 0;
+}

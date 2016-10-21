@@ -1,0 +1,25 @@
+/*
+ * PyDrawer.h
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYDRAWER_H_
+#define PYDRAWER_H_
+
+#include "MeshGridGenerator.h"
+#include <python2.7/Python.h>
+
+class PyDrawer {
+private:
+	MeshGridGenerator *meshgridGenerator;
+	*PyObject converter(MeshGrid meshGrid);
+public:
+	PyDrawer(MeshGridGenerator*);
+	virtual ~PyDrawer();
+
+	void drawContour();
+};
+
+#endif /* PYDRAWER_H_ */

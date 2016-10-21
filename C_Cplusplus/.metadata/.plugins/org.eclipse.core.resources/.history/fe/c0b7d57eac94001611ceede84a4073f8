@@ -1,0 +1,95 @@
+/*
+ * BacterialOtimizatorModified.cpp
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#include "BacterialOptimizatorModified.h"
+
+BacterialOptimizatorModified::BacterialOptimizatorModified(Population *population,double (*function)(std::vector<double>),unsigned int maxStep,unsigned int maxChem,unsigned int maxRep,unsigned int maxED,double eliminationFactor): BacterialOptimizator(population, function, maxStep, maxChem, maxRep, maxED, eliminationFactor) {
+
+}
+
+BacterialOptimizatorModified::~BacterialOptimizatorModified() {
+	// TODO Auto-generated destructor stub
+}
+
+void BacterialOptimizatorModified::memorizePopulation(){
+	Population* population=this->getPopulation();
+	unsigned int nrBac=population->getNrBac();
+	unsigned int nrDimension=population->getBacteria(0)->getX().size();
+	double **collection=(double**)malloc(nrBac*sizeof(double*));
+	printf("Stated to memorized a new population!\n");
+	for(unsigned int i=0;i<nrBac;i++){
+		Bacteria *bac=population->getBacteria(i);
+		std::vector<double> xBac=bac->getX();
+		double *x=(double*)malloc(nrDimension*sizeof(double));
+		std::copy(xBac.begin(),xBac.end(),x);
+
+		collection[i]=x;
+
+		printf(" %f %f\n",collection[i][0],collection[i][1]);
+	}
+	this->populations.push_back(collection);
+}
+
+void BacterialOptimizatorModified::chemotaxisPhase(){
+	for(unsigned int j=0;j<this->maxChem;j++){
+		for(unsigned int i=0;i<this->population->getPopulationSize();i++){
+			Bacteria *bacteria=this->population->getBacteria(i);
+			double lastValue=bacteria->getValue();
+			std::vector<double> direction=bacteria->tumbling();
+			unsigned int step=1;
+			while(step<=this->maxStep){
+				std::vector<double> X=bacteria->chemotaxis(direction, 1);
+
+				double value=(*this->function)(X);
+				step++;
+				if(lastValue>value){
+					bacteria->setValue(value);
+					bacteria->setX(X);
+					lastValue=value;
+				}
+				else{
+					break;
+				}
+			}
+		}
+		this->memorizePopulation();
+	}
+}
+
+std::string BacterialOptimizatorModified::getClassName(){
+	std::string className="Bacterial Optimizator Modified\n";
+	return className;
+}
+
+std::vector<double**> BacterialOptimizatorModified::getPopulations(){
+	return this->populations;
+}
+
+void BacterialOptimizatorModified::printpopulations(){
+	for(unsigned int i=0;i<populations.size();i++){
+		double **population=populations[i];
+		printf("Pop memorized %d\n",i);
+		for(unsigned int j=0;j<this->population->getNrBac();j++){
+			double *bac=population[j];
+			printf(" %f %f\n",bac[0],bac[1]);
+		}
+	}
+}
+
+
+void BacterialOptimizatorModified::freeMemory(){
+	for(unsigned int i=0;i<populations.size();i++){
+		double **population=populations[i];
+		printf("Pop memorized %d\n",i);
+		for(unsigned int j=0;j<this->population->getNrBac();j++){
+			double *bac=population[j];
+			delete bac;
+		}
+		delete population;
+	}
+	populations.clear();
+}

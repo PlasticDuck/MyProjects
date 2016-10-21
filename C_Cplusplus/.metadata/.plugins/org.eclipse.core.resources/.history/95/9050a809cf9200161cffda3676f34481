@@ -1,0 +1,29 @@
+/*
+ * BacterialOtimizatorModified.h
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#ifndef BACTERIALOPTIMIZATORMODIFIED_H_
+#define BACTERIALOPTIMIZATORMODIFIED_H_
+
+#include<vector>
+#include "Population.h"
+#include "BacterialOptimizator.h"
+
+#include <stdio.h>
+#include <string>
+class BacterialOptimizatorModified: public BacterialOptimizator{
+public:
+	BacterialOptimizatorModified(Population *population,double (*function)(std::vector<double>),unsigned int maxStep,unsigned int maxChem,unsigned int maxRep,unsigned int maxED,double eliminationFactor);
+	virtual ~BacterialOptimizatorModified();
+
+	void memorizePopulation();
+	void chemotaxisPhase();
+	friend std::string getClassName();
+
+
+};
+
+#endif /* BACTERIALOPTIMIZATORMODIFIED_H_ */

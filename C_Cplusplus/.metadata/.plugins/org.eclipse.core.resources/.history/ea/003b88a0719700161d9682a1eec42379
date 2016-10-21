@@ -1,0 +1,26 @@
+/*
+ * PyRunner.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYRUNNER_H_
+#define PYRUNNER_H_
+
+#include <python2.7/Python.h>
+
+class PyRunner {
+private:
+	bool needShow;
+	char**argv;
+	PyObject *main;
+public:
+	PyRunner(char **argv);
+	virtual ~PyRunner();
+	void star();
+	void end();
+	PyObject* getMainPyObject();
+};
+
+#endif /* PYRUNNER_H_ */

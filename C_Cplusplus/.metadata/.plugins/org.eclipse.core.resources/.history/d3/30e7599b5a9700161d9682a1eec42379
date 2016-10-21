@@ -1,0 +1,25 @@
+/*
+ * PyStatisticsDrawer.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYEVOLIATIONDRAWER_H_
+#define PYEVOLIATIONDRAWER_H_
+
+#include <python2.7/Python.h>
+#include <vector>
+
+class PyStatisticsDrawer {
+private:
+	char** argv;
+	std::vector<double> meanOfPopulation;
+	PyObject* converter();
+public:
+	PyStatisticsDrawer(std::vector<double>,char**);
+	virtual ~PyStatisticsDrawer();
+	void drawStatistics();
+};
+
+#endif /* PYEVOLIATIONDRAWER_H_ */

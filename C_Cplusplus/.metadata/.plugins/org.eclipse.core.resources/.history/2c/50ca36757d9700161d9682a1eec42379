@@ -1,0 +1,21 @@
+/*
+ * EvoluationCollecter.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "../Collector/EvolutionCollector.h"
+
+EvolutionCollecter::EvolutionCollecter() {
+	this->collection=new std::vector<std::vector<double> >();
+}
+
+EvolutionCollecter::~EvolutionCollecter() {
+	// TODO Auto-generated destructor stub
+}
+
+void EvolutionCollecter::add(std::vector<double> evolution){
+	this->collection->push_back(evolution);
+}
+

@@ -1,0 +1,17 @@
+/*
+ * PyStatisticsDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyStatisticsDrawer.h"
+
+PyStatisticsDrawer::PyStatisticsDrawer(std::vector<double> meanOfPopulation) {
+	this->meanOfPopulation=meanOfPopulation;
+}
+
+PyStatisticsDrawer::~PyStatisticsDrawer() {
+	// TODO Auto-generated destructor stub
+}
+

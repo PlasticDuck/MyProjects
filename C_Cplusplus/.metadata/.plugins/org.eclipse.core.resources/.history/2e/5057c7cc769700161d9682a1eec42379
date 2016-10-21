@@ -1,0 +1,18 @@
+/*
+ * EvoluationCollecter.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "EvoluationCollecter.h"
+
+EvoluationCollecter::EvoluationCollecter() {
+	// TODO Auto-generated constructor stub
+
+}
+
+EvoluationCollecter::~EvoluationCollecter() {
+	// TODO Auto-generated destructor stub
+}
+

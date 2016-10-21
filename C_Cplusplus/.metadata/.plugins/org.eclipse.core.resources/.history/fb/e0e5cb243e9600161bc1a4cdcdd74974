@@ -1,0 +1,28 @@
+//============================================================================
+// Name        : TestPython.cpp
+// Author      : Nandi
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <python2.7/Python.h>
+#include <python2.7/import.h>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	cout << "Testeles" << endl; // prints Testeles
+	Py_SetProgramName(argv[0]);
+	Py_Initialize();
+	FILE *f=fopen("PyCods/Hello.py","r");
+	PyObject *dict;
+	dict=PyDict_New();
+	PyImport_ImportFrozenModule("json");
+	//PyRun_String("import matplotlib",0,dict,dict);
+	PyRun_File(f,"PyCods/Hello.py",Py_file_input,dic,global1);
+	PyErr_Print();
+	Py_Finalize();
+	fclose(f);
+	return 0;
+}

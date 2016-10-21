@@ -1,0 +1,36 @@
+/*
+ * PyEvaluationDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyEvoluationDrawer.h"
+
+PyEvaluationDrawer::PyEvaluationDrawer(std::vector<double> meanOfPopulation,char** argv) {
+	this->meanOfPopulation=meanOfPopulation;
+	this->argv=argv;
+}
+
+PyEvaluationDrawer::~PyEvaluationDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+PyObject* PyEvaluationDrawer::converter(){
+	PyObject* list=PyList_New(this->meanOfPopulation.size());
+	for(unsigned int i=0;i<this->meanOfPopulation.size();i++){
+		PyObject* temp=Py_BuildValue("f",meanOfPopulation[i]);
+		PyList_SetItem(list,i,temp);
+	}
+	PyList_Fini();
+	return list;
+}
+
+void PyEvaluationDrawer::drawEvaluation(){
+	PyObject* meanOfPopPy=this->converter();
+	Py_SetProgramName(argv[0]);
+	Py_Initialize();
+	FILE *f=fopen("PyCode/drawContour.py","r");
+	PyObject *m,*globalDict;
+	m=PyImport_AddModule("__main__");
+}

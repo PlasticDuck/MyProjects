@@ -1,0 +1,34 @@
+/*
+ * PyRunner.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyRunner.h"
+
+PyRunner::PyRunner(char **argv) {
+	this->argv=argv;
+	this->main=NULL;
+}
+
+PyRunner::~PyRunner() {
+	// TODO Auto-generated destructor stub
+}
+
+PyObject* PyRunner::getMainPyObject(){
+	return this->main;
+}
+
+void PyRunner::star(){
+	Py_SetProgramName("Drawer");
+	Py_Initialize();
+	this->main=PyImport_AddModule("__main__");
+	PyRun_SimpleString("import matplotlib.pyplot;matplotlib.pyplot.ion()");
+}
+
+void PyRunner::end(){
+	PyRun_SimpleString("matplotlib.pyplot.show();");
+	PyErr_Print();
+	Py_Finalize();
+}

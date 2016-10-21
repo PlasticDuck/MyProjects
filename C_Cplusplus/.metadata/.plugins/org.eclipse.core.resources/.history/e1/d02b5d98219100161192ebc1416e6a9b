@@ -1,0 +1,48 @@
+//============================================================================
+// Name        : BacterialForegainAlgorithm.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+
+#include <stdio.h>
+#include <time.h>
+//My includes files
+#include "Bacteria.h"
+#include "Population.h"
+
+
+using namespace std;
+
+int main() {
+	srand(time(NULL));
+	cout << "!!!START!!!" << endl;
+	vector<double> x;
+	x.push_back(1.0);x.push_back(1.6);x.push_back(0.1);
+	double step=0.1;
+	Bacteria bac(x,step);
+	bac.printBacteria();
+
+
+	double intervals[2][2];
+	intervals[0][0]=-10.0;intervals[0][1]=10.0;
+	intervals[1][0]=-10.0;intervals[1][1]=10.0;
+
+	double* p=(double*)intervals;
+	Population pop(10,2,(double*)intervals,0.1);
+	pop.printIntervals();
+
+	pop.getRandomBacteria();
+	pop.InitailizeRandom();
+	pop.printBacteries();
+	cout<<"Sorted population"<<endl;
+	pop.sortPopulation();
+	pop.printBacteries();
+
+	cout << "!!!END!!!" << endl;
+	return 0;
+}

@@ -1,0 +1,36 @@
+/*
+ * DrawerRunner.cpp
+ *
+ *  Created on: Oct 19, 2016
+ *      Author: nandi
+ */
+
+#include "DrawerRunner.h"
+
+DrawerRunner::DrawerRunner(std::string destination,std::string fileName,int argc,char** argv) {
+	this->destination=destination;
+	this->fileName=fileName;
+	this->argc=argc;
+	this->argv=argv;
+}
+
+DrawerRunner::~DrawerRunner() {
+	// TODO Auto-generated destructor stub
+}
+
+void DrawerRunner::drawing(){
+	std::cout<<this->pyFile<<std::endl;
+	Py_SetProgramName(this->argv[0]);
+	Py_Initialize();
+	FILE *pyFile=fopen("PyCode/drawer.py","r");
+	PyObject *dict,*main;
+	dict=PyDict_New();
+
+	PyRun_SimpleString("h=2");
+	PyRun_SimpleString("print 'Hello!!',h");
+	PyRun_File(pyFile,"PyCode/drawer.py",Py_file_input,dict,dict);
+
+	Py_Finalize();
+	fclose(pyFile);
+	std::cout<<"End drawing!";
+}

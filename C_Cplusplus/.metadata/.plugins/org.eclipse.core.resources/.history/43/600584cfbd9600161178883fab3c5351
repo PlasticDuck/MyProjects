@@ -1,0 +1,30 @@
+/*
+ * MeshGridSaver.h
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#ifndef MESHGRIDSAVER_H_
+#define MESHGRIDSAVER_H_
+#include <string>
+#include <vector>
+
+typedef  struct MeshGrid{
+	double **X,Y,Z;
+	unsigned int nrPoints;
+};
+class MeshGridSaver {
+private:
+	std::string destination;
+	std::string fileName;
+	unsigned int nrPoint;
+	double (*function)(std::vector<double>);
+	double *intervals;
+public:
+	MeshGridSaver(double (*function)(std::vector<double>),double*,unsigned int,std::string,std::string);
+	virtual ~MeshGridSaver();
+	MeshGrid generateMeshGrid();
+};
+
+#endif /* MESHGRIDSAVER_H_ */

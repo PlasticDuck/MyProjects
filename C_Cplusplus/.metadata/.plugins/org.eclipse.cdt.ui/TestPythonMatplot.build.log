@@ -1,0 +1,18 @@
+20:23:41 **** Build of configuration Debug for project TestPythonMatplot ****
+make all 
+Building file: ../Test.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Test.d" -MT"Test.o" -o "Test.o" "../Test.cpp"
+Finished building: ../Test.cpp
+ 
+Building target: TestPythonMatplot
+Invoking: GCC C++ Linker
+g++  -o "TestPythonMatplot"  ./Test.o   
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+makefile:44: recipe for target 'TestPythonMatplot' failed
+collect2: error: ld returned 1 exit status
+make: *** [TestPythonMatplot] Error 1
+
+20:23:42 Build Finished (took 529ms)
+

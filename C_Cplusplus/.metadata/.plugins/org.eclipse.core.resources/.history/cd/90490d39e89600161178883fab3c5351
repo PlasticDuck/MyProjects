@@ -1,0 +1,4 @@
+import  matplotlib.pyplot
+
+matplotlib.pyplot.contour(X,Y,Z,100);
+matplotlib.pyplot.show();

@@ -1,0 +1,7 @@
+import  matplotlib.pyplot
+import thread
+
+ 
+
+thread.start_new_thread(matplotlib.pyplot.show,("s",1))
+matplotlib.pyplot.show()

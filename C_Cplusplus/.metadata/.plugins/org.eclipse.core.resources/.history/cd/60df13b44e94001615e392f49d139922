@@ -1,0 +1,20 @@
+/*
+ * DrawSphere.h
+ *
+ *  Created on: Oct 17, 2016
+ *      Author: nandi
+ */
+
+#ifndef DRAWSPHERE_H_
+#define DRAWSPHERE_H_
+
+#include<plplot/plplot.h>
+#include<plplot/plstream.h>
+
+class DrawSphere {
+public:
+	DrawSphere();
+	virtual ~DrawSphere();
+};
+
+#endif /* DRAWSPHERE_H_ */

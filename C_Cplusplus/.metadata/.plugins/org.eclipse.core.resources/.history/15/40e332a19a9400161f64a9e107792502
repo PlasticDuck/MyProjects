@@ -1,0 +1,34 @@
+/*
+ * PopulationsDrawer.h
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATIONSDRAWER_H_
+#define POPULATIONSDRAWER_H_
+
+#include <vector>
+#include <limits>
+#include <plplot/plstream.h>
+#include <plplot/plplot.h>
+#include <iostream>
+
+
+
+class PopulationsDrawer {
+private:
+	int nrBacteries;
+	plstream *pls;
+	float xMin,xMax,yMin,yMax;
+	static const int just=0,axis=-2;
+public:
+	std::vector<double**> populations;
+	PopulationsDrawer(std::vector<std::vector<double>*> populations,int);
+	virtual ~PopulationsDrawer();
+	void initialize();
+	void endDraw();
+	void drawPoint();
+};
+
+#endif /* POPULATIONSDRAWER_H_ */

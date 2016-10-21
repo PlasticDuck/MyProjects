@@ -1,0 +1,44 @@
+/*
+ * PyEvolutionDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyEvolutionDrawer.h"
+
+PyEvolutionDrawer::PyEvolutionDrawer(std::vector<double> meanOfPopulation,char** argv) {
+	this->meanOfPopulation=meanOfPopulation;
+	this->argv=argv;
+}
+
+PyEvolutionDrawer::~PyEvolutionDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+PyObject* PyEvolutionDrawer::converter(){
+	PyObject* list=PyList_New(this->meanOfPopulation.size());
+	for(unsigned int i=0;i<this->meanOfPopulation.size();i++){
+		PyObject* temp=Py_BuildValue("f",meanOfPopulation[i]);
+		PyList_SetItem(list,i,temp);
+	}
+	PyList_Fini();
+	return list;
+}
+
+void PyEvolutionDrawer::drawEvolution(){
+	std::cout<<"Start drawing evoluation!"<<std::endl;
+	PyObject* meanOfPopPy=this->converter();
+	Py_SetProgramName(argv[0]);
+	Py_Initialize();
+	FILE *f=fopen("PyCode/drawEvoluation.py","r");
+	PyObject *m,*globalDict;
+	m=PyImport_AddModule("__main__");
+	if(m==NULL) return;
+	globalDict=PyModule_GetDict(m);
+	PyRun_File(f,"PyCode/drawEvoluation.py",Py_file_input,globalDict,globalDict);
+	PyErr_Print();
+	Py_Finalize();
+	fclose(f);
+	std::cout<<"End drawing evoluation!"<<std::endl;
+}

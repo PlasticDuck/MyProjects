@@ -1,0 +1,14 @@
+18:41:44 **** Incremental Build of configuration Release for project test3 ****
+Info: Internal Builder is used for build
+g++ -I/home/nandi/.plplot/install_directory/include -O3 -Wall -c -fmessage-length=0 -o src/test3.o ../src/test3.cpp 
+g++ -L/home/nandi/.plplot/install_directory/lib -o test3 src/test3.o 
+src/test3.o: In function `main':
+test3.cpp:(.text.startup+0x6c): undefined reference to `plstream::plstream()'
+test3.cpp:(.text.startup+0x74): undefined reference to `plstream::init()'
+test3.cpp:(.text.startup+0x98): undefined reference to `plstream::env(double, double, double, double, int, int)'
+test3.cpp:(.text.startup+0xaf): undefined reference to `plstream::lab(char const*, char const*, char const*)'
+test3.cpp:(.text.startup+0xca): undefined reference to `plstream::poin(int, double const*, double const*, int)'
+collect2: error: ld returned 1 exit status
+
+18:41:44 Build Finished (took 445ms)
+

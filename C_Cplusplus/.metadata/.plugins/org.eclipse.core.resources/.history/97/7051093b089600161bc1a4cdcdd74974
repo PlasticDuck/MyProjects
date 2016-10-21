@@ -1,0 +1,3 @@
+print "Kulso file tesztelese"
+impoprt json
+print "END",json.loads("[1,2]")

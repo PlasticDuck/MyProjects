@@ -1,0 +1,19 @@
+/*
+ * BacterialOtimizatorModified.h
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#ifndef BACTERIALOTIMIZATORMODIFIED_H_
+#define BACTERIALOTIMIZATORMODIFIED_H_
+
+class BacterialOtimizatorModified : public BacterialOptimizator{
+
+public:
+	BacterialOtimizatorModified();
+	virtual ~BacterialOtimizatorModified();
+
+};
+
+#endif /* BACTERIALOTIMIZATORMODIFIED_H_ */

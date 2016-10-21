@@ -1,0 +1,18 @@
+/*
+ * MeshGridSaver.h
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#ifndef MESHGRIDSAVER_H_
+#define MESHGRIDSAVER_H_
+
+class MeshGridSaver {
+
+public:
+	MeshGridSaver();
+	virtual ~MeshGridSaver();
+};
+
+#endif /* MESHGRIDSAVER_H_ */

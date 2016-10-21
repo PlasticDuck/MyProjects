@@ -1,0 +1,17 @@
+/*
+ * PyRunner.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYRUNNER_H_
+#define PYRUNNER_H_
+
+class PyRunner {
+public:
+	PyRunner();
+	virtual ~PyRunner();
+};
+
+#endif /* PYRUNNER_H_ */

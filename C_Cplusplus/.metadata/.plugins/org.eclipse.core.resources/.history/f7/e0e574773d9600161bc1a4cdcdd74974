@@ -1,0 +1,3 @@
+print "Kulso file tesztelese"
+import matplotlib
+print "END",json.loads("[1,2]")

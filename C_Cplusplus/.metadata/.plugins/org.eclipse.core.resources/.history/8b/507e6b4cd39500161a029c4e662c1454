@@ -1,0 +1,27 @@
+/*
+ * PopulationsFileSaver.h
+ *
+ *  Created on: Oct 19, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATIONSFILESAVER_H_
+#define POPULATIONSFILESAVER_H_
+#include <vector>
+#include <jansson.h>
+
+
+
+class PopulationsFileSaver {
+private:
+	std::vector<double**> populations;
+	char *fileName;
+	char *destination;
+	unsigned int
+public:
+	PopulationsFileSaver(std::vector<double**>,char*,char*);
+	virtual ~PopulationsFileSaver();
+	void saveInTheFile();
+};
+
+#endif /* POPULATIONSFILESAVER_H_ */

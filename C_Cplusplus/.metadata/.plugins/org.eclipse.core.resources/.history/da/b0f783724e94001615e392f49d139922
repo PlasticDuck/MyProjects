@@ -1,0 +1,17 @@
+/*
+ * DrawSphere.h
+ *
+ *  Created on: Oct 17, 2016
+ *      Author: nandi
+ */
+
+#ifndef DRAWSPHERE_H_
+#define DRAWSPHERE_H_
+
+class DrawSphere {
+public:
+	DrawSphere();
+	virtual ~DrawSphere();
+};
+
+#endif /* DRAWSPHERE_H_ */

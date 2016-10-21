@@ -1,0 +1,13 @@
+import matplotlib.pyplot
+
+
+def drawEvolution(meanPopulation):
+    indexes=range(1,len(meanPopulation)+1)
+    matplotlib.pyplot.hold(True);
+    matplotlib.pyplot.plot(indexes,meanOfPopulation)
+    matplotlib.pyplot.xlabel("Chemotaxis index");
+    matplotlib.pyplot.ylabel("Mean value (log10)");
+
+print "Plottin the evolution:"
+drawEvolution(meanOfPopulation)
+

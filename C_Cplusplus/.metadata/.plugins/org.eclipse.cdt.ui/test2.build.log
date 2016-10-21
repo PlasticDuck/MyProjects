@@ -1,0 +1,15 @@
+13:35:40 **** Incremental Build of configuration Debug for project test2 ****
+make all 
+Building file: ../src/test2.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test2.d" -MT"src/test2.o" -o "src/test2.o" "../src/test2.cpp"
+Finished building: ../src/test2.cpp
+ 
+Building target: test2
+Invoking: Cross G++ Linker
+g++  -o "test2"  ./src/test2.o   -lplplotcxxd  -lplplotd
+Finished building target: test2
+ 
+
+13:35:41 Build Finished (took 434ms)
+

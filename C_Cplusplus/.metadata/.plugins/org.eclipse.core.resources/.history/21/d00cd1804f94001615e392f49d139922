@@ -1,0 +1,25 @@
+/*
+ * DrawSphere.h
+ *
+ *  Created on: Oct 17, 2016
+ *      Author: nandi
+ */
+
+#ifndef DRAWSPHERE_H_
+#define DRAWSPHERE_H_
+
+#include<plplot/plplot.h>
+#include<plplot/plstream.h>
+
+class DrawSphere {
+public:
+	DrawSphere();
+	virtual ~DrawSphere();
+	void drawSphere();
+private:
+	static const int PERIMETERPTS=100;
+	static const int RPTS=40;
+	static const int THETAPTS=40;
+};
+
+#endif /* DRAWSPHERE_H_ */

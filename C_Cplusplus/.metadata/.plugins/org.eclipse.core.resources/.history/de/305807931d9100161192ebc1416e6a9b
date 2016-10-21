@@ -1,0 +1,23 @@
+/*
+ * BacterialOptimizator.h
+ *
+ *  Created on: Oct 13, 2016
+ *      Author: nandi
+ */
+
+#ifndef BACTERIALOPTIMIZATOR_H_
+#define BACTERIALOPTIMIZATOR_H_
+
+#include "Population.h"
+
+class BacterialOptimizator {
+private:
+	Population population;
+public:
+	BacterialOptimizator(Population population);
+	virtual ~BacterialOptimizator();
+
+
+};
+
+#endif /* BACTERIALOPTIMIZATOR_H_ */

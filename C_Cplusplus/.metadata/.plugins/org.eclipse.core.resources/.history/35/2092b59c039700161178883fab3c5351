@@ -1,0 +1,28 @@
+import  matplotlib.pyplot
+import numpy as np
+
+
+def drawPoints(population):
+      for j in range(len(population)):
+            bac=population[j]
+            matplotlib.pyplot.plot(bac[0],bac[1],'g^');
+
+def drawLines(collection,poplationPrev):
+    nrPop=len(collection)
+    nrBac=len(collection[0])
+    print nrBac
+    for j in range(nrBac):
+        bacX=[];bacY=[];
+        for i in range(len(collection)):
+            population=collection[i]
+            bac=population[j]
+            bacX=np.append(bacX,bac[0])
+            bacY=np.append(bacY,bac[1])
+        plt.plot(bacX,bacY,'r--');    
+
+            
+matplotlib.pyplot.hold(True);
+drawPoints(population)
+if first is 1:
+    
+    

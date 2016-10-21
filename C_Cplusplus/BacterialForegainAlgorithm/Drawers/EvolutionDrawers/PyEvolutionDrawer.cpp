@@ -1,0 +1,49 @@
+/*
+ * PyEvolutionDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyEvolutionDrawer.h"
+
+PyEvolutionDrawer::PyEvolutionDrawer(std::vector<double> meanPopulation,PyRunner* runnerPy) {
+	this->meanPopulation=meanPopulation;
+	this->runnerPy=runnerPy;
+}
+
+PyEvolutionDrawer::~PyEvolutionDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+PyObject* PyEvolutionDrawer::converter(){
+	PyObject* list=PyList_New(this->meanPopulation.size());
+	for(unsigned int i=0;i<this->meanPopulation.size();i++){
+		PyObject* temp=Py_BuildValue("f",meanPopulation[i]);
+		PyList_SetItem(list,i,temp);
+	}
+	PyList_Fini();
+	return list;
+}
+
+void PyEvolutionDrawer::drawEvolution(){
+	std::cout<<"Start drawing evoluation!"<<std::endl;
+
+	PyRun_SimpleString("import matplotlib.pyplot;matplotlib.pyplot.figure()");
+	PyRun_SimpleString("matplotlib.pyplot.hold(True)");
+	PyObject* meanOfPopPy=this->converter();
+
+	FILE *f=fopen("PyCode/drawEvolution.py","r");
+	PyObject *m,*globalDict;
+	m=this->runnerPy->getMainPyObject();
+	if(m==NULL) return;
+	PyModule_AddObject(m,"meanPopulation",meanOfPopPy);
+	globalDict=PyModule_GetDict(m);
+	PyRun_File(f,"PyCode/drawEvolution.py",Py_file_input,globalDict,globalDict);
+	PyRun_SimpleString("matplotlib.pyplot.xlabel('Chemotaxis index');matplotlib.pyplot.ylabel('Mean value (log10)')");
+	PyRun_SimpleString("matplotlib.pyplot.hold(False)");
+	this->runnerPy->setNeedShow(true);
+
+	fclose(f);
+	std::cout<<"End drawing evoluation!"<<std::endl;
+}

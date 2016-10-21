@@ -1,0 +1,45 @@
+//============================================================================
+// Name        : BacterialForegainAlgorithm.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+
+#include <stdio.h>
+#include <time.h>
+//My includes files
+#include "Bacteria.h"
+#include "Population.h"
+
+
+using namespace std;
+
+int main() {
+	srand(time(NULL));
+	cout << "!!!START!!!" << endl;
+	double intervals[2][2];
+	intervals[0][0]=-10.0;intervals[0][1]=10.0;
+	intervals[1][0]=-10.0;intervals[1][1]=10.0;
+
+	double* p=(double*)intervals;
+	Population pop(10,2,(double*)intervals,0.1);
+	pop.InitailizeRandom();
+
+
+
+
+	cout << "!!!END!!!" << endl;
+	return 0;
+}
+
+double Sphere(vector<double> X){
+	double value=0;
+	for(unsigned int i=0;i<X.size();i++){
+		value+=X[i]*X[i];
+	}
+	return value;
+}

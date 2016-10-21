@@ -1,0 +1,17 @@
+/*
+ * PopulationsFileSaver.h
+ *
+ *  Created on: Oct 19, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATIONSFILESAVER_H_
+#define POPULATIONSFILESAVER_H_
+
+class PopulationsFileSaver {
+public:
+	PopulationsFileSaver();
+	virtual ~PopulationsFileSaver();
+};
+
+#endif /* POPULATIONSFILESAVER_H_ */

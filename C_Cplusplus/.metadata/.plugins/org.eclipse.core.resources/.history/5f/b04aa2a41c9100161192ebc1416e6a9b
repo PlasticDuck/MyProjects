@@ -1,0 +1,9 @@
+/*
+ * BacterialOptimizator_test.cpp
+ *
+ *  Created on: Oct 13, 2016
+ *      Author: nandi
+ */
+
+#include "BacterialOptimizator.h"
+

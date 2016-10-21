@@ -1,0 +1,37 @@
+/*
+ * BacterialOptimizator.cpp
+ *
+ *  Created on: Oct 13, 2016
+ *      Author: nandi
+ */
+
+#include "BacterialOptimizator.h"
+
+BacterialOptimizator::BacterialOptimizator(Population population,double (*function)(std::vector<double>)) {
+	this->population=population;
+	this->function=function;
+	// TODO Auto-generated constructor stub
+
+}
+
+BacterialOptimizator::~BacterialOptimizator() {
+	// TODO Auto-generated destructor stub
+}
+
+
+void BacterialOptimizator::initPopulationWithValue(){
+	for(unsigned int i=0;i<this->population.getPopulationSize();i++){
+		Bacteria bacteria=this->population.getBacteria(i);
+		double value=(*this->function)(bacteria.getX());
+		bacteria.setValue(value);
+	}
+
+}
+
+void BacterialOptimizator::chemotaxisPhase(){
+	for(unsigned int i=0;i<this->population.getPopulationSize();i++){
+				Bacteria bacteria=this->population.getBacteria(i);
+
+
+	}
+}

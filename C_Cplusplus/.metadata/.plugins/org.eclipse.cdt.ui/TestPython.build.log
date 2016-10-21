@@ -1,0 +1,6 @@
+20:32:05 **** Incremental Build of configuration Debug for project TestPython ****
+make all 
+make: Nothing to be done for 'all'.
+
+20:32:06 Build Finished (took 132ms)
+

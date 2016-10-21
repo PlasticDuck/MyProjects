@@ -1,0 +1,6 @@
+15:24:09 **** Incremental Build of configuration Build (GNU) for project .plplot ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+
+15:24:10 Build Finished (took 150ms)
+

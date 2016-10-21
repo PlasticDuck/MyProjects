@@ -1,0 +1,30 @@
+/*
+ * PopulationsDrawer.h
+ *
+ *  Created on: Oct 15, 2016
+ *      Author: nandi
+ */
+
+#ifndef POPULATIONSDRAWER_H_
+#define POPULATIONSDRAWER_H_
+
+#include <vector>
+#include <plplot/plstream.h>
+#include <plplot/plplot.h>
+
+
+class PopulationsDrawer {
+private:
+	plstream *pls;
+	float xMin,xMax,yMin,yMax;
+	static const int just=0,;
+public:
+	std::vector<std::vector<double>*> populations;
+	PopulationsDrawer(std::vector<std::vector<double>*> populations);
+	virtual ~PopulationsDrawer();
+	void initialize();
+	void endDraw();
+	void drawPoint();
+};
+
+#endif /* POPULATIONSDRAWER_H_ */

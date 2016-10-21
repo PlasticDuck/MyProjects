@@ -1,0 +1,44 @@
+/*
+ * TestContour.cpp
+ *
+ *  Created on: Oct 17, 2016
+ *      Author: nandi
+ */
+
+#include "TestContour.h"
+
+TestContour::TestContour(int argc, const char**argv ) {
+	int i,j;
+	PLFLT *xg1=new PLFLT[XPTS];
+	PLFLT *yg1=new PLFLT[YPTS];
+	PLcGrid cgrid1;PLcGrid2 cgrid2;
+	PLFLT **z,**w;
+	PLFLT xx,yy,argx,argy,distort;
+	static PLINT mark=1500;
+	static PLINT space=1500;
+	pls=new plstream();
+
+	//Parse and process command line arguments
+	pls->parseopts(&argc,argv,PL_PARSE_FULL);
+	//Initialize plplot
+
+	pls->init();
+	pls->Alloc2dGrid(&z,XPTS,YPTS);
+	pls->Alloc2dGrid(&w,XPTS,YPTS);
+
+	for(i=0;i<XPTS;i++){
+		xx=(PLFLT)(i-(XPTS/2))/(PLFLT)(XPTS/2);
+		for (j=0;j<YPTS;j++){
+			yy=(PLFLT)(j-(YPTS/2))/(PLFLT)(YPTS/2)-1.0;
+			z[i][j]=xx*xx-yy*yy;
+			w[i][j]=2*xx*yy;
+		}
+	}
+	cgrid1.xg=xg1;
+
+}
+
+TestContour::~TestContour() {
+	// TODO Auto-generated destructor stub
+}
+

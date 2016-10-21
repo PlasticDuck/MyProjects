@@ -1,0 +1,13 @@
+import  matplotlib.pyplot
+import numpy as np
+
+
+def drawPoints(population):
+      for j in range(len(population)):
+            bac=population[j]
+            matplotlib.pyplot.plot(bac[0],bac[1],'g^');
+            
+            
+matplotlib.pyplot.hold(True);
+drawPoints(population)
+print "Fisrt",first

@@ -1,0 +1,19 @@
+/*
+ * PyDrawer.h
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYDRAWER_H_
+#define PYDRAWER_H_
+
+class PyDrawer {
+private:
+
+public:
+	PyDrawer();
+	virtual ~PyDrawer();
+};
+
+#endif /* PYDRAWER_H_ */

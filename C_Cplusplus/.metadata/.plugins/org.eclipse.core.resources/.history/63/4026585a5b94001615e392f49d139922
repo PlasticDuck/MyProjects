@@ -1,0 +1,74 @@
+/*
+ * DrawSphere.cpp
+ *
+ *  Created on: Oct 17, 2016
+ *      Author: nandi
+ */
+
+#include "DrawSphere.h"
+
+DrawSphere::DrawSphere(int argc, const char**argv) {
+
+	pls=new plstream();
+
+	//Parse and process command line arguments
+	//pls->parseopts(&argc,argv,PL_PARSE_FULL);
+	//Initialize plplot
+
+	// TODO Auto-generated constructor stub
+	pls->parseopts(&argc,argv,PL_PARSE_FULL);
+	pls->scolbg(255,255,255);
+	pls->sdev("tk");
+	pls->init();
+
+	pls->scol0(0,0,0,0);
+
+	PLFLT x[]={1.0,1.5},y[]={1.0,1.5};
+
+
+
+}
+
+DrawSphere::~DrawSphere() {
+	// TODO Auto-generated destructor stub
+}
+
+
+void DrawSphere::drawSphere(){
+	pls->env( -1., 1., -1., 1., 0, -2 );
+	PLFLT    t, r, theta;
+	pls->col0(0);
+
+	//Sphere
+	PLFLT    *px = new PLFLT[PERIMETERPTS];
+	PLFLT    *py = new PLFLT[PERIMETERPTS];
+
+	for(int i=0;i< PERIMETERPTS;i++){
+	 t=(2*M_PI/(PERIMETERPTS-1))*(PLFLT)i;
+	 px[i]=cos(t);
+	 py[i]=sin(t);
+	}
+	pls->line(PERIMETERPTS,px,py);
+
+	//Contour
+	PLcGrid2 cgrid2;
+	PLFLT    **z;
+	PLFLT    *lev = new PLFLT[10];
+	pls->Alloc2dGrid( &cgrid2.xg, RPTS, THETAPTS );
+	pls->Alloc2dGrid( &cgrid2.yg, RPTS, THETAPTS );
+	pls->Alloc2dGrid( &z, RPTS, THETAPTS );
+	cgrid2.nx=RPTS;
+	cgrid2.ny=THETAPTS;
+
+
+	std::cout<<"HERE "<<PERIMETERPTS;
+
+	for(int i=0;i<RPTS;i++){
+		r=(PLFLT)i/(RPTS-1);
+		for(int j=0;j<THETAPTS;j++){
+		}
+	}
+	delete px;delete py;
+	pls->env( -1., 1., -1., 1., 0, -2 );
+}
+

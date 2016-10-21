@@ -1,0 +1,25 @@
+/*
+ * PyStatisticsDrawer.cpp
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#include "PyStatisticsDrawer.h"
+
+PyStatisticsDrawer::PyStatisticsDrawer(std::vector<double> meanOfPopulation) {
+	this->meanOfPopulation=meanOfPopulation;
+}
+
+PyStatisticsDrawer::~PyStatisticsDrawer() {
+	// TODO Auto-generated destructor stub
+}
+
+PyObject* PyStatisticsDrawer::converter(){
+	PyObject* list=PyList_New(this->meanOfPopulation);
+	for(unsigned int i=0;i<this->meanOfPopulation.size();i++){
+		PyObject* temp=Py_BuildValue("f",meanOfPopulation[i]);
+		PyList_SetItem(list,i,temp);
+	}
+	PyList_Fini();
+}

@@ -1,0 +1,25 @@
+/*
+ * PyEvaluationDrawer.h
+ *
+ *  Created on: Oct 21, 2016
+ *      Author: nandi
+ */
+
+#ifndef PYEVOLIATIONDRAWER_H_
+#define PYEVOLIATIONDRAWER_H_
+
+#include <python2.7/Python.h>
+#include <vector>
+
+class PyEvaluationDrawer {
+private:
+	char** argv;
+	std::vector<double> meanOfPopulation;
+	PyObject* converter();
+public:
+	PyEvaluationDrawer(std::vector<double>,char**);
+	virtual ~PyEvaluationDrawer();
+	void drawEvaluation();
+};
+
+#endif /* PYEVOLIATIONDRAWER_H_ */

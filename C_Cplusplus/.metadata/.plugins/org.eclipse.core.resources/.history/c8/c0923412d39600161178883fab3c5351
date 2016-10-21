@@ -1,0 +1,49 @@
+/*
+ * MeshGridGenerator.cpp
+ *
+ *  Created on: Oct 20, 2016
+ *      Author: nandi
+ */
+
+#include "MeshGridGenerator.h"
+
+MeshGridGenerator::MeshGridGenerator(double (*function)(std::vector<double>),double **intervals,unsigned int nrPoint) {
+	this->function=function;
+	this->intervals=intervals;
+//	this->destination=destination;
+//	this->fileName=fileName;
+	this->nrPoint=nrPoint;
+}
+
+MeshGridGenerator::~MeshGridGenerator() {
+	// TODO Auto-generated destructor stub
+}
+
+
+MeshGrid MeshGridGenerator::generateMeshGrid(){
+	MeshGrid grid;
+	grid.nrPoints=this->nrPoint;
+	grid.X=(double**)malloc(this->nrPoint*sizeof(double*));
+	grid.Y=(double**)malloc(this->nrPoint*sizeof(double*));
+	grid.Z=(double**)malloc(this->nrPoint*sizeof(double*));
+	double deltaX=(intervals[1]-intervals[0])/(float)nrPoint;
+	double deltaY=(intervals[3]-intervals[2])/(float)nrPoint;
+	for(unsigned int i=0;i<this->nrPoint;i++){
+		grid.X[i]=(double*)malloc(this->nrPoint*sizeof(double));
+		grid.Y[i]=(double*)malloc(this->nrPoint*sizeof(double));
+		grid.Z[i]=(double*)malloc(this->nrPoint*sizeof(double));
+		for(unsigned int j=0;j<nrPoint;j++){
+			double tempX,tempY,tempZ;
+			tempX=intervals[0]+deltaX*j;
+			tempY=intervals[2]+deltaY*i;
+			std::vector<double> tempVec;
+			tempVec.push_back(tempX);tempVec.push_back(tempY);
+			tempZ=(*this->function)(tempVec);
+			grid.X[i][j]=tempX;
+			grid.Y[i][j]=tempY;
+			grid.Z[i][j]=tempZ;
+		}
+	}
+
+	return grid;
+}
